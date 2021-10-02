@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1821209220692102943}
+  - component: {fileID: 762009005}
   m_Layer: 0
   m_Name: Horizontal Slider Interactable
   m_TagString: Untagged
@@ -33,6 +34,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &762009005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 18865777392847117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a305b55b0ebe4c429c93ddf2839022f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sliderInteractable: {fileID: 91897070}
+  _platformToMove: {fileID: 0}
+  _sliderBoundsFromCenter: 2.8
+  _platformBoundsFromCenter: 6
 --- !u!1 &1003496168586965795
 GameObject:
   m_ObjectHideFlags: 0
@@ -44,6 +61,7 @@ GameObject:
   - component: {fileID: 9086270523080945165}
   - component: {fileID: 2976293759675669254}
   - component: {fileID: 9032134733429962959}
+  - component: {fileID: 91897070}
   m_Layer: 0
   m_Name: Horizontal Slider
   m_TagString: Untagged
@@ -142,6 +160,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.42, y: 0.9}
   m_EdgeRadius: 0
+--- !u!114 &91897070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1003496168586965795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5e8219e72d2f74dba29bf832494045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2256665320578871296
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2256665320578871296}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.61, z: 0}
+  m_LocalPosition: {x: 0, y: 0.92, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1821209220692102943}
