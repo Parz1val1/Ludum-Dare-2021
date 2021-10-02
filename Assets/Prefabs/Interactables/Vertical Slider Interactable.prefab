@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7452558352938630875}
   - component: {fileID: 5830383934563728298}
   - component: {fileID: 4201819937811389772}
+  - component: {fileID: 1303142342}
   m_Layer: 0
   m_Name: Vertical Slider
   m_TagString: Untagged
@@ -109,6 +110,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61, y: 0.39}
   m_EdgeRadius: 0
+--- !u!114 &1303142342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35982387564504103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f5e8219e72d2f74dba29bf832494045, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &791410240435131602
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,6 +295,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4866720794628732719}
+  - component: {fileID: 546143156}
   m_Layer: 0
   m_Name: Vertical Slider Interactable
   m_TagString: Untagged
@@ -306,3 +320,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &546143156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6546066321219621163}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 623be1b3906af5344a889bef33070f1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sliderInteractable: {fileID: 1303142342}
+  _platformToMove: {fileID: 0}
+  _sliderBoundsFromCenter: 1.3
+  _platformBoundsFromCenter: 3
