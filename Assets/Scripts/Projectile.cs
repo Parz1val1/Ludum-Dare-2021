@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float velocity = 5f;
+    public AudioClip clip;
 
     private void Start()
     {
@@ -24,7 +25,9 @@ public class Projectile : MonoBehaviour
         }
         else
         {
-            Destroy(this.gameObject);
+            AudioSource.PlayClipAtPoint(clip, this.transform.position);
+            this.gameObject.SetActive(false);
+            Destroy(this.gameObject, .5f);
         }
     }
 }
