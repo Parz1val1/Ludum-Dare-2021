@@ -12,7 +12,7 @@ public class CameraFollow : MonoBehaviour
 
     private void Start()
     {
-        this.transform.position = new Vector3(player.position.x + offset, this.transform.position.y, -10f);
+        this.transform.position = new Vector3(player.position.x + offset, player.position.y + offset, -10f);
     }
 
     // Update is called once per frame
