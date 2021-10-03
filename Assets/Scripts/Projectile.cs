@@ -18,7 +18,13 @@ public class Projectile : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("Collision");
-        Destroy(this.gameObject);
+        if (collision.gameObject.tag == "Player")
+        {
+            Physics2D.IgnoreCollision(collision.gameObject.GetComponent<Collider2D>(), this.GetComponent<Collider2D>());
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

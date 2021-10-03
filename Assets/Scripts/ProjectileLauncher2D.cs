@@ -9,7 +9,7 @@ public class ProjectileLauncher2D : MonoBehaviour
     public GameObject projectile;
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         var worldMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         var direction = Quaternion.LookRotation(Vector3.forward, (worldMousePosition - transform.position)) * Quaternion.Euler(0, 0, 90);
