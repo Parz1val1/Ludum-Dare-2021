@@ -13,7 +13,7 @@ namespace GameSystem
         [SerializeField] private Rigidbody2D _playerRigidBody;
         [SerializeField] private GameObject _endUI;
 
-        private bool _isTimerRunning {  get => TimerManager.IsTimerRunning();   }
+        private bool _isTimerRunning => TimerManager.IsTimerRunning();
 
         private bool _gameEnded = false;
 
