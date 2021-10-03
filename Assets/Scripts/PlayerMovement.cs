@@ -6,26 +6,42 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public PlayerController controller;
+    public Transform killFloor;
     public float runSpeed = 40f;
     float horizontalMove = 0f;
+    Vector3 lastPlayerPosition;
     bool jump = false;
+    bool jumped = false;
+
+    private void Start()
+    {
+        lastPlayerPosition = this.transform.position;
+    }
 
     // Update is called once per frame
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        if (Input.GetButton("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             jump = true;
+        }
+        if (this.transform.position.y < killFloor.position.y)
+        {
+            this.transform.position = lastPlayerPosition;
+            this.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+            this.GetComponent<Rigidbody2D>().angularVelocity = 0f;
         }
     }
 
     void FixedUpdate()
     {
-        controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
-        if (jump)
+        jumped = controller.Move(horizontalMove * Time.fixedDeltaTime, false, jump);
+        if (jumped)
         {
-            jump = false;
+            lastPlayerPosition = this.transform.position;
+            jumped = false;
         }
+        jump = false;
     }
 }
