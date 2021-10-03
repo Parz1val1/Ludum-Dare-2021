@@ -5,6 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float velocity = 5f;
+    public float hitForce = 10f;
     public AudioClip clip;
 
     private void Start()
@@ -25,6 +26,8 @@ public class Projectile : MonoBehaviour
         }
         else
         {
+            var direction = -(this.transform.position - collision.transform.position);
+            collision.gameObject.GetComponent<Rigidbody2D>().AddForce(direction * hitForce);
             AudioSource.PlayClipAtPoint(clip, this.transform.position);
             this.gameObject.SetActive(false);
             Destroy(this.gameObject, .5f);

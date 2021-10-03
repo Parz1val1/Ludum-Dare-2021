@@ -3141,6 +3141,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 642046773013602306, guid: f32abbeb04290d8459e898f12ab3d6db, type: 3}
+      propertyPath: m_Constraints
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6183259981272748020, guid: f32abbeb04290d8459e898f12ab3d6db, type: 3}
       propertyPath: m_Name
       value: LevelChunk1 (1)
