@@ -7,8 +7,6 @@ namespace GameSystem
 {
     public class LevelManager : MonoBehaviour
     {
-        [SerializeField] private CameraManager _cameraManager;
-
         [SerializeField] private LevelChunk _levelChunkPrevious;
         [SerializeField] private LevelChunk _levelChunkCurrent;
         [SerializeField] private LevelChunk _levelChunkNext;
@@ -17,13 +15,7 @@ namespace GameSystem
 
         private void Start()
         {
-            if (_cameraManager == null)
-            {
-                Debug.LogError("No camera manager assigned.", this.gameObject);
-
-                return;
-            }
-            else if (_levelChunkPrevious == null)
+            if (_levelChunkPrevious == null)
             {
                 Debug.LogError("No previous level chunk manager assigned.", this.gameObject);
 
@@ -47,23 +39,33 @@ namespace GameSystem
         {
             if (_levelChunkPrevious.WithinLevelBounds() && !_levelChunkCurrent.WithinLevelBounds())
             {
+                GameObject newLevelChunk = Instantiate(_levelChunkCollection[Random.Range(0, _levelChunkCollection.Length)], _levelChunkNext.GetComponent<LevelChunk>()._frontSpawnPos, Quaternion.identity);
+
+                Vector3 _newChunkSpawnDifference = newLevelChunk.GetComponent<LevelChunk>()._frontSpawnPos - newLevelChunk.transform.position;
+                Vector3 _spawnPoint = _levelChunkPrevious.GetComponent<LevelChunk>()._backSpawnPos - _newChunkSpawnDifference;
+
+                newLevelChunk.transform.position = _spawnPoint;
+
                 _levelChunkNext.DestroyLevel();
 
                 _levelChunkNext = _levelChunkCurrent;
                 _levelChunkCurrent = _levelChunkPrevious;
 
-                GameObject newLevelChunk = Instantiate(_levelChunkCollection[Random.Range(0, _levelChunkCollection.Length)], _cameraManager._backSpawnPoint.transform.position, Quaternion.identity);
-
                 _levelChunkPrevious = newLevelChunk.GetComponent<LevelChunk>();
             }
             else if (_levelChunkNext.WithinLevelBounds() && !_levelChunkCurrent.WithinLevelBounds())
             {
+                GameObject newLevelChunk = Instantiate(_levelChunkCollection[Random.Range(0, _levelChunkCollection.Length)], _levelChunkNext.GetComponent<LevelChunk>()._frontSpawnPos, Quaternion.identity);
+
+                Vector3 _newChunkSpawnDifference = newLevelChunk.GetComponent<LevelChunk>()._backSpawnPos - newLevelChunk.transform.position;
+                Vector3 _spawnPoint = _levelChunkNext.GetComponent<LevelChunk>()._frontSpawnPos - _newChunkSpawnDifference;
+
+                newLevelChunk.transform.position = _spawnPoint;
+
                 _levelChunkPrevious.DestroyLevel();
 
                 _levelChunkPrevious = _levelChunkCurrent;
                 _levelChunkCurrent = _levelChunkNext;
-
-                GameObject newLevelChunk = Instantiate(_levelChunkCollection[Random.Range(0, _levelChunkCollection.Length)], _cameraManager._frontSpawnPoint.transform.position, Quaternion.identity);
 
                 _levelChunkNext = newLevelChunk.GetComponent<LevelChunk>();
             }

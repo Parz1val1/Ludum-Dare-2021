@@ -11,8 +11,23 @@ namespace GameSystem.Environment
         private Camera _mainCamera;
         private Plane[] _cameraPlanes;
 
+        [SerializeField] private GameObject _frontSpawnPoint;
+        [SerializeField] private GameObject _backSpawnPoint;
+
+        public Vector3 _frontSpawnPos => _frontSpawnPoint.transform.position;
+        public Vector3 _backSpawnPos => _backSpawnPoint.transform.position;
+
         private void Start()
         {
+            if (_frontSpawnPoint == null)
+            {
+                Debug.LogError("You did not assign a front spawn point for this object", this.gameObject);
+            }
+            if (_backSpawnPoint == null)
+            {
+                Debug.LogError("You did not assign a back spawn point for this object", this.gameObject);
+            }
+
             _collider = this.GetComponent<Collider2D>();
             _mainCamera = Camera.main;
         }
