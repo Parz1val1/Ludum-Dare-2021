@@ -2,45 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using GameSystem;
 
 public class Timer : MonoBehaviour
 {
     public TMP_Text timeText;
-    public float timeRemaining = 60;
-    public bool timerIsRunning = false;
 
     void Start()
     {
-        timerIsRunning = true;
+        TimerManager.StartTimer();
     }
 
     void Update()
     {
-        if (!timerIsRunning)
+        if (!TimerManager.IsTimerRunning())
         {
             return;
         }
 
-        if (timeRemaining > 0)
+        if (TimerManager.GetTimeRemaining() > 0)
         {
-            timeRemaining -= Time.deltaTime;
-            DisplayTime(timeRemaining);
+            TimerManager.SubtractTimeRemaining(Time.deltaTime);
+            timeText.text = TimerManager.GetDisplayTimeRemaining();
         }
         else
         {
-            timeRemaining = 0;
-            timerIsRunning = false;
+            TimerManager.StopTimer();
             Debug.Log("Time has run out!");
         }
-    }
-
-    void DisplayTime(float timeToDisplay)
-    {
-        timeToDisplay += 1;
-
-        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
-        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
-
-        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
