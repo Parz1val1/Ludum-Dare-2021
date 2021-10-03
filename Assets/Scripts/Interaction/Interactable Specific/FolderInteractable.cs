@@ -38,8 +38,10 @@ namespace Interaction
 
         private void IwasClicked()
         {
-            if (_myFolderType == FolderType.PowerUp)
+            if (_myFolderType == FolderType.PowerUp && _clickCounter < 1)
             {
+                _clickCounter++;
+
                 if (_myPowerUpType == PowerUpType.ExtraTime)
                 {
                     TimerManager.AddTimeRemaining(_timeToAdd);
