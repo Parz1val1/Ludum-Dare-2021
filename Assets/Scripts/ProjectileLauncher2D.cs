@@ -16,7 +16,6 @@ public class ProjectileLauncher2D : MonoBehaviour
         this.transform.rotation = direction;
         if (Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("Fired");
             Instantiate(projectile, spawnPoint.transform.position, direction);
         }
     }

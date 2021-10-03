@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7014711014991313670}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 7014711014991313664}
+  killFloor: {fileID: 0}
   runSpeed: 100
 --- !u!1 &7014711015630211806
 GameObject:
@@ -322,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoint: {fileID: 7014711016093923589}
-  projectile: {fileID: 0}
+  projectile: {fileID: 5016253510704388297, guid: 6b25a2ab9d1b3424e82a4552470b31cc, type: 3}
 --- !u!1 &7014711016093923590
 GameObject:
   m_ObjectHideFlags: 0
