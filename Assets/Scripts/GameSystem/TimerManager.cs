@@ -38,7 +38,7 @@ namespace GameSystem
             float minutes = Mathf.FloorToInt(timeToDisplay / 60);
             float seconds = Mathf.FloorToInt(timeToDisplay % 60);
 
-            return string.Format("{0:00}:{1:00}", minutes, seconds);
+            return string.Format("Full system reset in {0:00}:{1:00}", minutes, seconds);
         }
 
         public static void ResetTimer()

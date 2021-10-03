@@ -10,7 +10,7 @@ public class ClickableObject : MonoBehaviour, IMouseClickDown, IMouseClickUp
     public delegate void ClickedUp();
     public event ClickedUp ClickedUpEvent;
 
-    public virtual void OnClickDown()
+    public virtual void OnMouseClickDown()
     {
         ClickedDownEvent.Invoke();
     }
