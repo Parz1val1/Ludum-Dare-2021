@@ -10,6 +10,8 @@ namespace GameSystem.Environment
         private Collider2D _collider;
         private Camera _mainCamera;
         private Plane[] _cameraPlanes;
+        [SerializeField]
+        private GameObject[] myLevelParts;
 
         private void Start()
         {
@@ -33,6 +35,10 @@ namespace GameSystem.Environment
 
         public void DestroyLevel()
         {
+            for(int i = 0; i < myLevelParts.Length; i++)
+            {
+                Destroy(myLevelParts[i]);
+            }
             Destroy(this.gameObject);
         }
     }
