@@ -6,7 +6,13 @@ namespace Interaction
 {
     public class MouseClickListener : MonoBehaviour
     {
+        private Stack<ClickableObject> _clickedObjectStack;
         private ClickableObject _clickedObject;
+
+        private void Start()
+        {
+            _clickedObjectStack = new Stack<ClickableObject>();
+        }
 
         void Update()
         {
@@ -15,24 +21,36 @@ namespace Interaction
                 Vector3 clickpos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 Vector2 click2D = new Vector2(clickpos.x, clickpos.y);
 
-                RaycastHit2D hit = Physics2D.Raycast(click2D, Vector2.zero);
+                RaycastHit2D[] hit = Physics2D.RaycastAll(click2D, Vector2.zero);
 
-                if (hit.collider != null)
+                for (int i = 0; i < hit.Length; i++)
                 {
-                    _clickedObject = hit.transform.GetComponent<ClickableObject>();
-
-                    if (_clickedObject != null)
+                    if (hit[i].collider != null)
                     {
-                        _clickedObject.OnClickDown();
+                        _clickedObject = hit[i].transform.GetComponent<ClickableObject>();
+
+                        if (_clickedObject != null)
+                        {
+                            _clickedObject.OnMouseClickDown();
+
+                            _clickedObjectStack.Push(_clickedObject);
+
+                            _clickedObject = null;
+                        }
                     }
                 }
             }
 
             if (Input.GetMouseButtonUp(0))
             {
-                if (_clickedObject != null)
+                if (_clickedObjectStack.Count > 0)
                 {
-                    _clickedObject.OnMouseClickUp();
+                    while(_clickedObjectStack.Count > 0)
+                    {
+                        _clickedObject = _clickedObjectStack.Pop();
+
+                        _clickedObject.OnMouseClickUp();
+                    }
 
                     _clickedObject = null;
                 }

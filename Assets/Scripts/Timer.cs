@@ -8,8 +8,9 @@ public class Timer : MonoBehaviour
 {
     public TMP_Text timeText;
 
-    void Start()
+    void Awake()
     {
+        TimerManager.ResetTimer();
         TimerManager.StartTimer();
     }
 
