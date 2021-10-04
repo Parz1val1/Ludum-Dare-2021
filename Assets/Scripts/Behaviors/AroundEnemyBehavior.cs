@@ -1,3 +1,4 @@
+using GameSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class AroundEnemyBehavior : MonoBehaviour
 {
     [SerializeField] private Transform bottomLeftCornerEdgeCheck;
     [SerializeField] private Transform bottomRightCornerEdgeCheck;
+    [SerializeField] private float _timeToAdd = 10;
     [SerializeField] private float speed = 1f;
     [SerializeField] private float rotateSpeed = 150f;
     [SerializeField] private float edgeDetectionDistance = 1f;
@@ -14,6 +16,7 @@ public class AroundEnemyBehavior : MonoBehaviour
     const float groundedRadius = .01f; // Radius of the overlap circle to determine if grounded
 
     private bool grounded = false;
+    private float groundedTimer = 5;
     private bool wasGrounded = false;
     private Vector2 facingDirection = Vector2.left;
 
@@ -38,6 +41,7 @@ public class AroundEnemyBehavior : MonoBehaviour
             {
                 //clockwise = !clockwise;
             }
+            groundedTimer = 5;
         }
         else
         {
@@ -46,6 +50,12 @@ public class AroundEnemyBehavior : MonoBehaviour
                 Move(-facingDirection);
             }
             transform.Rotate(Vector3.forward * rotateSpeed * Time.deltaTime);
+            groundedTimer -= Time.deltaTime;
+            if(groundedTimer <= 0)
+            {
+                TimerManager.AddTimeRemaining(_timeToAdd);
+                Destroy(this.gameObject);
+            }
         }
     }
 

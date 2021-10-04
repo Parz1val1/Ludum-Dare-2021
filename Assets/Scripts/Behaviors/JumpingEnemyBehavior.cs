@@ -1,3 +1,4 @@
+using GameSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,7 @@ using UnityEngine;
 public class JumpingEnemyBehavior : MonoBehaviour
 {
     [SerializeField] private Transform bottomEdgeCheck;
+    [SerializeField] private float _timeToAdd = 10;
     [SerializeField] private bool startFacingLeft = true;
     [SerializeField] private float jumpInterval = 0.75f;
     [SerializeField] private float jumpForce = 150f;
@@ -14,6 +16,7 @@ public class JumpingEnemyBehavior : MonoBehaviour
     const float groundedRadius = .01f; // Radius of the overlap circle to determine if grounded
 
     private bool grounded = false;
+    private float groundedTimer = 5;
     private bool wasGrounded = false;
     Vector2 facingDirection = Vector2.left;
     private float nextJumpTime = 0f;
@@ -50,6 +53,16 @@ public class JumpingEnemyBehavior : MonoBehaviour
                 nextJumpTime = Time.time + jumpInterval;
 
                 Jump(facingDirection);
+            }
+            groundedTimer = 5;
+        }
+        else
+        {
+            groundedTimer -= Time.deltaTime;
+            if (groundedTimer <= 0)
+            {
+                TimerManager.AddTimeRemaining(_timeToAdd);
+                Destroy(this.gameObject);
             }
         }
     }

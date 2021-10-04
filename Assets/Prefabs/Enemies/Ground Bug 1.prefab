@@ -208,9 +208,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomLeftCornerEdgeCheck: {fileID: 3020007514985046363}
   bottomRightCornerEdgeCheck: {fileID: 3020007515041341541}
+  _timeToAdd: 5
   speed: 1
   edgeDetectionDistance: 1
   startFacingLeft: 1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 128

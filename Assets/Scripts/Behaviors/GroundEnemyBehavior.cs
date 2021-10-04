@@ -1,3 +1,4 @@
+using GameSystem;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class GroundEnemyBehavior : MonoBehaviour
 {
     [SerializeField] private Transform bottomLeftCornerEdgeCheck;
     [SerializeField] private Transform bottomRightCornerEdgeCheck;
+    [SerializeField] private float _timeToAdd = 10;
     [SerializeField] private float speed = 1f;
     [SerializeField] private float edgeDetectionDistance = 1f;
     [SerializeField] private bool startFacingLeft = true;
@@ -13,6 +15,7 @@ public class GroundEnemyBehavior : MonoBehaviour
     const float groundedRadius = .01f; // Radius of the overlap circle to determine if grounded
 
     private bool grounded = false;
+    private float groundedTimer = 5;
     Vector2 facingDirection = Vector2.left;
 
     private void Awake()
@@ -31,10 +34,33 @@ public class GroundEnemyBehavior : MonoBehaviour
         {
             Move(facingDirection);
 
-            RaycastHit2D hit = Physics2D.Raycast(bottomLeftCornerEdgeCheck.position, Vector2.down + facingDirection, edgeDetectionDistance);
-            if (hit.collider == null)
+            var hits = Physics2D.RaycastAll(bottomLeftCornerEdgeCheck.position, Vector2.down + facingDirection, edgeDetectionDistance);
+            bool touchingGround = false;
+            bool touchingAir = false;
+            foreach(RaycastHit2D collision in hits)
+            {
+                if (collision.collider.gameObject.layer == 7 && !touchingGround)
+                {
+                    touchingGround = true;
+                }
+                else if (collision.collider.gameObject.layer == 0 && !touchingAir)
+                {
+                    touchingAir = true;
+                }
+            }
+            if(touchingAir && !touchingGround)
             {
                 Flip();
+            }
+            
+        }
+        else
+        {
+            groundedTimer -= Time.deltaTime;
+            if (groundedTimer <= 0)
+            {
+                TimerManager.AddTimeRemaining(_timeToAdd);
+                Destroy(this.gameObject);
             }
         }
     }

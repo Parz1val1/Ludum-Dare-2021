@@ -6,8 +6,8 @@ namespace GameSystem
 {
     public static class TimerManager
     {
-        public static float defaultTimeRemaining = 600;
-        private static float timeRemaining = 600;
+        public static float defaultTimeRemaining = 60;
+        private static float timeRemaining = 60;
         private static bool isTimerRunning = false;
 
         public static void AddTimeRemaining(float time)

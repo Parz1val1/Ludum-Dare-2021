@@ -148,13 +148,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bottomLeftCornerEdgeCheck: {fileID: 7354667023637878393}
   bottomRightCornerEdgeCheck: {fileID: 7354667022301918961}
+  _timeToAdd: 5
   speed: 1
   rotateSpeed: 150
   edgeDetectionDistance: 1
   clockwise: 1
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 128
 --- !u!1 &7354667022301918966
 GameObject:
   m_ObjectHideFlags: 0
