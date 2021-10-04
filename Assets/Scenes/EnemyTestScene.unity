@@ -840,6 +840,35 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 641374101822604600, guid: e24ea4112a8feb04f8df45be099c36fb, type: 3}
   m_PrefabInstance: {fileID: 373718431}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1001980468 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1654612605206803788, guid: dfc10c27738487c43aab1e9abf5e1ef7, type: 3}
+  m_PrefabInstance: {fileID: 6190469578934683226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1001980469 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1654612605333910924, guid: dfc10c27738487c43aab1e9abf5e1ef7, type: 3}
+  m_PrefabInstance: {fileID: 6190469578934683226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1001980470
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001980468}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 426ad3f69812322499095c9bf460de7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1092844103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1327,6 +1356,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4590510054786208232, guid: 4b4330dafbfaaab449959813047245ab, type: 3}
   m_PrefabInstance: {fileID: 6331975712632204836}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1559950161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3020007515815405231, guid: 49c1bb060408c2541ab22aef281e44f4, type: 3}
+  m_PrefabInstance: {fileID: 3020007515967795256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1559950162
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559950161}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: adc4d36062384674999bd79a355594a1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &1599429522 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7014711014991313665, guid: 15bcbb8dd8206564e90ccfbb0178081e, type: 3}
@@ -1376,7 +1429,7 @@ Transform:
   m_Children:
   - {fileID: 2003490456}
   - {fileID: 430644806}
-  - {fileID: 2071799230}
+  - {fileID: 1001980469}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1500,11 +1553,30 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 641374101822604600, guid: e24ea4112a8feb04f8df45be099c36fb, type: 3}
   m_PrefabInstance: {fileID: 1253840520}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &2071799230 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6190469580427535332, guid: dfc10c27738487c43aab1e9abf5e1ef7, type: 3}
-  m_PrefabInstance: {fileID: 6190469578934683226}
+--- !u!1 &2117186554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7354667021878121232, guid: 483f240306b9bb84a8a9667e9906e422, type: 3}
+  m_PrefabInstance: {fileID: 7354667021771492693}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2117186555
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117186554}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f40c4ea359dd6af4d999023d49401d54, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &808050783787166879
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1613,6 +1685,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3020007515815405219, guid: 49c1bb060408c2541ab22aef281e44f4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2942776486306476404, guid: 63d9301400b40b247af2e6117001c56b, type: 3}
     - target: {fileID: 3020007515815405231, guid: 49c1bb060408c2541ab22aef281e44f4, type: 3}
       propertyPath: m_Name
       value: Ground Bug 1
@@ -1821,6 +1897,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1781894539}
     m_Modifications:
+    - target: {fileID: 1654612605206803888, guid: dfc10c27738487c43aab1e9abf5e1ef7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6182306942996672149, guid: b06c21ce0adab7b4cad742821092fb19, type: 3}
+    - target: {fileID: 1654612605333910924, guid: dfc10c27738487c43aab1e9abf5e1ef7, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6190469580427535332, guid: dfc10c27738487c43aab1e9abf5e1ef7, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -2174,6 +2258,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7354667021878121247, guid: 483f240306b9bb84a8a9667e9906e422, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354667021878121247, guid: 483f240306b9bb84a8a9667e9906e422, type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7354667021878121247, guid: 483f240306b9bb84a8a9667e9906e422, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4797830631001449413, guid: 2d7fa0ffd34a6064b82bfbb518326b99, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 483f240306b9bb84a8a9667e9906e422, type: 3}
 --- !u!1001 &7392714394801110553

@@ -38,11 +38,20 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< HEAD
   - component: {fileID: 1654612605333910924}
   - component: {fileID: 1654612605206803888}
   - component: {fileID: 1654612605206803891}
   - component: {fileID: 1654612605206803890}
   - component: {fileID: 1654612605206803789}
+=======
+  - component: {fileID: 6190469580427535332}
+  - component: {fileID: 6190469580427535256}
+  - component: {fileID: 6190469580427535259}
+  - component: {fileID: 6190469580427535258}
+  - component: {fileID: 6190469580427535333}
+  - component: {fileID: 6190469578934683228}
+>>>>>>> 8e8e744d3d2fa667fcdcd35cbf1a96553debd5f1
   m_Layer: 0
   m_Name: Jumping Bug 1
   m_TagString: Untagged
@@ -56,9 +65,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 1654612605206803788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.49, y: 0.96, z: 856.1701}
+=======
+  m_GameObject: {fileID: 6190469580427535335}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.36, y: 0.97, z: 856.1701}
+>>>>>>> 8e8e744d3d2fa667fcdcd35cbf1a96553debd5f1
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1654612604292868219}
@@ -105,7 +120,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  m_Sprite: {fileID: -6182306942996672149, guid: b06c21ce0adab7b4cad742821092fb19, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -154,7 +169,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.7066667, y: 1.7066667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -184,4 +199,27 @@ MonoBehaviour:
   jumpForwardMultiplier: 1
   whatIsGround:
     serializedVersion: 2
+<<<<<<< HEAD
     m_Bits: 128
+=======
+    m_Bits: 4294967295
+--- !u!95 &6190469578934683228
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6190469580427535335}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 426ad3f69812322499095c9bf460de7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+>>>>>>> 8e8e744d3d2fa667fcdcd35cbf1a96553debd5f1
